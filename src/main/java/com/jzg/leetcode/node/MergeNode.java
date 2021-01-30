@@ -39,8 +39,8 @@ public class MergeNode {
       return node1;
     }
 
-    Node root = new Node();
-    Node current = root;
+    Node dummy = new Node();
+    Node current = dummy;
     while (node1 != null && node2 != null) {
       if (node1.value < node2.value) {
         current.next = node1;
@@ -54,6 +54,6 @@ public class MergeNode {
 
     current.next = node1 != null ? node1 : node2;
 
-    return root.next;
+    return dummy.next;
   }
 }

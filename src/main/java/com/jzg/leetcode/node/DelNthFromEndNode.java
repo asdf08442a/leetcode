@@ -20,7 +20,7 @@ public class DelNthFromEndNode {
     Node node13 = new Node(node14, 3);
     Node node11 = new Node(node13, 1);
 
-    Node node = delNthFromEndNode(node11, 5);
+    Node node = delNthFromEndNode(node11, 3);
     System.out.println(node);
 
   }
