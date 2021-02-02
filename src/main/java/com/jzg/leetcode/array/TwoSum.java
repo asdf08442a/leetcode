@@ -1,4 +1,4 @@
-package com.jzg.leetcode;
+package com.jzg.leetcode.array;
 
 import com.google.common.collect.Lists;
 import java.util.List;

@@ -27,14 +27,14 @@ public class ReverseNode {
       return null;
     }
 
-    Node nNode = new Node(null, -1);
+    Node dummy = new Node(null, -1);
     Node curr = node;
     while (curr != null) {
       Node next = curr.next;
-      curr.next = nNode.next;
-      nNode.next = curr;
+      curr.next = dummy.next;
+      dummy.next = curr;
       curr = next;
     }
-    return nNode.next;
+    return dummy.next;
   }
 }

@@ -25,8 +25,8 @@ public class SumNode {
   }
 
   static Node sumNode(Node node1, Node node2) {
-    Node res = new Node();
-    Node head = res;
+    Node dummy = new Node();
+    Node head = dummy;
     int c = 0, s;
     while (node1 != null || node2 != null || c != 0) {
       int a = node1 == null ? 0 : node1.value;
@@ -38,6 +38,6 @@ public class SumNode {
       node2 = node2 == null ? null : node2.next;
       head = head.next;
     }
-    return res.next;
+    return dummy.next;
   }
 }
