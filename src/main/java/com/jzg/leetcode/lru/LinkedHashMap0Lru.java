@@ -10,12 +10,12 @@ import java.util.Set;
  * @author jinzg
  * @date 2021/2/10
  */
-public class LinkedHashMapLru {
+public class LinkedHashMap0Lru {
 
   private LinkedHashMap<Integer, Object> cache;
   private int capacity;
 
-  public LinkedHashMapLru(int capacity) {
+  public LinkedHashMap0Lru(int capacity) {
     cache = new LinkedHashMap();
     this.capacity = capacity;
   }
