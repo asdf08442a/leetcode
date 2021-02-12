@@ -28,11 +28,11 @@ public class LevelTraverse {
     TreeNode root = new TreeNode(root21, root22, 1);
 
     List<Integer> list = Lists.newArrayList();
-    levelTraverse(root, list);
+    levelTraverseUnRecur(root, list);
     System.out.println(list);
   }
 
-  static void levelTraverse(TreeNode root, List<Integer> list) {
+  static void levelTraverseUnRecur(TreeNode root, List<Integer> list) {
     if (root == null) {
       return;
     }

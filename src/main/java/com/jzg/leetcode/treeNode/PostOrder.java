@@ -24,7 +24,7 @@ public class PostOrder {
     TreeNode root = new TreeNode(root21, root22, 1);
 
     List<Integer> list = new ArrayList<>();
-    postOrderTreeNode(root, list);
+    postOrderRecur(root, list);
     System.out.println(list);
 
     List<Integer> list1 = new ArrayList<>();
@@ -32,12 +32,12 @@ public class PostOrder {
     System.out.println(list1);
   }
 
-  static void postOrderTreeNode(TreeNode root, List<Integer> list) {
+  static void postOrderRecur(TreeNode root, List<Integer> list) {
     if (root == null) {
       return;
     }
-    postOrderTreeNode(root.left, list);
-    postOrderTreeNode(root.right, list);
+    postOrderRecur(root.left, list);
+    postOrderRecur(root.right, list);
     list.add(root.value);
   }
 

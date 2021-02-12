@@ -32,13 +32,13 @@ public class InOrder {
     System.out.println(list1);
   }
 
-  static void inOrderTreeNode(TreeNode root, List<Integer> list) {
+  static void inOrderRecur(TreeNode root, List<Integer> list) {
     if (root == null) {
       return;
     }
-    inOrderTreeNode(root.left, list);
+    inOrderRecur(root.left, list);
     list.add(root.value);
-    inOrderTreeNode(root.right, list);
+    inOrderRecur(root.right, list);
   }
 
   static void inOrderUnRecur(TreeNode root, List<Integer> list) {

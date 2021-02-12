@@ -1,14 +1,15 @@
 package com.jzg.leetcode.treeNode;
 
 /**
- * 最大深度
+ * 最小深度
  *
  * @author jinzg
- * @date 2021/2/1
+ * @date 2021/2/2
  */
-public class MaxDepth {
+public class MinDepth {
 
   public static void main(String[] args) {
+
     TreeNode root2111 = new TreeNode(null, null, 8);
 
     TreeNode root211 = new TreeNode(root2111, null, 4);
@@ -21,14 +22,14 @@ public class MaxDepth {
 
     TreeNode root = new TreeNode(root21, root22, 1);
 
-    int depth = maxDepthRecur(root);
+    int depth = minDepthRecur(root);
     System.out.println(depth);
   }
 
-  static int maxDepthRecur(TreeNode root) {
+  static int minDepthRecur(TreeNode root) {
     if (root == null) {
       return 0;
     }
-    return Math.max(maxDepthRecur(root.left), maxDepthRecur(root.right)) + 1;
+    return Math.min(minDepthRecur(root.left), minDepthRecur(root.right)) + 1;
   }
 }
