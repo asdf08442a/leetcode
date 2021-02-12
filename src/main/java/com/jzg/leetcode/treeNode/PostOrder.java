@@ -1,5 +1,9 @@
 package com.jzg.leetcode.treeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 /**
  * 后序遍历
  *
@@ -19,16 +23,42 @@ public class PostOrder {
 
     TreeNode root = new TreeNode(root21, root22, 1);
 
-    postOrderTreeNode(root);
+    List<Integer> list = new ArrayList<>();
+    postOrderTreeNode(root, list);
+    System.out.println(list);
 
+    List<Integer> list1 = new ArrayList<>();
+    postOrderUnRecur(root, list1);
+    System.out.println(list1);
   }
 
-  static void postOrderTreeNode(TreeNode root) {
+  static void postOrderTreeNode(TreeNode root, List<Integer> list) {
     if (root == null) {
       return;
     }
-    postOrderTreeNode(root.left);
-    postOrderTreeNode(root.right);
-    System.out.print(String.valueOf(root.value) + ' ');
+    postOrderTreeNode(root.left, list);
+    postOrderTreeNode(root.right, list);
+    list.add(root.value);
+  }
+
+  static void postOrderUnRecur(TreeNode root, List<Integer> list) {
+    Stack<TreeNode> stack1 = new Stack();
+    Stack<TreeNode> stack2 = new Stack();
+    if (root != null) {
+      stack1.add(root);
+    }
+    while (!stack1.isEmpty()) {
+      TreeNode node = stack1.pop();
+      stack2.push(node);
+      if (node.left != null) {
+        stack1.push(node.left);
+      }
+      if (node.right != null) {
+        stack1.push(node.right);
+      }
+    }
+    while (!stack2.isEmpty()) {
+      list.add(stack2.pop().value);
+    }
   }
 }

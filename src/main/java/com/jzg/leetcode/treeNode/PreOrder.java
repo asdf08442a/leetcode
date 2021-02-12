@@ -24,8 +24,12 @@ public class PreOrder {
     TreeNode root = new TreeNode(root21, root22, 1);
 
     List<Integer> list = new ArrayList<>();
-    preOrderUnRecur(root, list);
-    System.out.println(list.toString());
+    preOrderRecur(root, list);
+    System.out.println(list);
+
+    List<Integer> list1 = new ArrayList<>();
+    preOrderUnRecur(root, list1);
+    System.out.println(list1);
   }
 
   static void preOrderRecur(TreeNode root, List<Integer> list) {
@@ -38,19 +42,16 @@ public class PreOrder {
   }
 
   static void preOrderUnRecur(TreeNode root, List<Integer> list) {
-    if (root == null) {
-      return;
-    }
     Stack<TreeNode> stack = new Stack();
-    stack.push(root);
-    while (!stack.isEmpty()) {
-      TreeNode node = stack.pop();
-      list.add(node.value);
-      if (node.right != null) {
-        stack.push(node.right);
+    while (root != null || !stack.isEmpty()) {
+      while (root != null) {
+        list.add(root.value);
+        stack.push(root);
+        root = root.left;
       }
-      if (node.left != null) {
-        stack.push(node.left);
+      if (!stack.isEmpty()) {
+        root = stack.pop();
+        root = root.right;
       }
     }
   }
