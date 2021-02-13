@@ -3,7 +3,7 @@ package com.jzg.leetcode.treeNode;
 import java.util.Stack;
 
 /**
- * 第k层节点数
+ * 判断BST
  *
  * @author jinzg
  * @date 2021/2/12

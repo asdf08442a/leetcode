@@ -1,7 +1,7 @@
 package com.jzg.leetcode.treeNode;
 
 /**
- * 第k层节点数
+ * 判断相同
  *
  * @author jinzg
  * @date 2021/2/12

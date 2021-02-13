@@ -1,7 +1,7 @@
 package com.jzg.leetcode.treeNode;
 
 /**
- * 是否是镜像
+ * 判断镜像
  *
  * @author jinzg
  * @date 2021/2/12
