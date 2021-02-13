@@ -1,7 +1,7 @@
 package com.jzg.leetcode.treeNode;
 
 /**
- * 判断是否为子结构
+ * 公共祖先
  *
  * @author jinzg
  * @date 2021/2/13
