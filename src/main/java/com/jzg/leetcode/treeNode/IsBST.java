@@ -6,7 +6,7 @@ import java.util.Stack;
  * 判断BST
  *
  * @author jinzg
- * @date 2021/2/12
+ * @date 2021/2/13
  */
 public class IsBST {
 
