@@ -6,7 +6,7 @@ package com.jzg.leetcode.node;
  * @author jinzg
  * @date 2021/1/28
  */
-public class GetIntersectionNode {
+public class GetIntersection {
 
   public static void main(String[] args) {
     Node node17 = new Node(null, 7);
@@ -14,11 +14,11 @@ public class GetIntersectionNode {
     Node node11 = new Node(node13, 1);
 
     Node node21 = new Node(node13, 1);
-    Node rst = getIntersectionNode(node11, node21);
+    Node rst = getIntersection(node11, node21);
     System.out.println(rst);
   }
 
-  static Node getIntersectionNode(Node node1, Node node2) {
+  static Node getIntersection(Node node1, Node node2) {
     if (node1 == null || node2 == null) {
       return null;
     }

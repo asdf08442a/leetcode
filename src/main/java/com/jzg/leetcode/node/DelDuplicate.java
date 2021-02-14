@@ -10,7 +10,7 @@ package com.jzg.leetcode.node;
  * @author jinzg
  * @date 2021/1/28
  */
-public class DelDuplicateNode {
+public class DelDuplicate {
 
   public static void main(String[] args) {
     Node node17 = new Node(null, 3);
@@ -18,12 +18,12 @@ public class DelDuplicateNode {
     Node node13 = new Node(node14, 3);
     Node node11 = new Node(null, 3);
 
-    Node node = delDuplicateNode(node11);
+    Node node = delDuplicate(node11);
     System.out.println(node);
 
   }
 
-  static Node delDuplicateNode(Node node) {
+  static Node delDuplicate(Node node) {
     if (node == null) {
       return null;
     }

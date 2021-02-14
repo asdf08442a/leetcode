@@ -1,8 +1,8 @@
 package com.jzg.leetcode.node;
 
 /**
- * 链表求和
- *
+ * 求和
+ * <p>
  * 1->3->7 + 7->8->1 = 8->1->9
  *
  * @author jinzg
@@ -19,12 +19,12 @@ public class SumNode {
     Node node28 = new Node(node21, 8);
     Node node27 = new Node(node28, 7);
 
-    Node node = sumNode(node11, node27);
+    Node node = sum(node11, node27);
     System.out.println(node);
 
   }
 
-  static Node sumNode(Node node1, Node node2) {
+  static Node sum(Node node1, Node node2) {
     Node dummy = new Node();
     Node head = dummy;
     int c = 0, s;
@@ -32,7 +32,7 @@ public class SumNode {
       int a = node1 == null ? 0 : node1.value;
       int b = node2 == null ? 0 : node2.value;
       s = a + b + c;
-      head.next = new Node(null, s%10);
+      head.next = new Node(null, s % 10);
       c = s / 10;
       node1 = node1 == null ? null : node1.next;
       node2 = node2 == null ? null : node2.next;

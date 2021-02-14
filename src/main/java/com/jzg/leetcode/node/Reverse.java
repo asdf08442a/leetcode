@@ -10,19 +10,19 @@ package com.jzg.leetcode.node;
  * @author jinzg
  * @date 2021/1/28
  */
-public class ReverseNode {
+public class Reverse {
 
   public static void main(String[] args) {
     Node node17 = new Node(null, 7);
     Node node13 = new Node(node17, 3);
     Node node11 = new Node(node13, 1);
 
-    Node node = reverseNode1(node11);
+    Node node = reverse(node11);
     System.out.println(node);
 
   }
 
-  static Node reverseNode1(Node node) {
+  static Node reverse(Node node) {
     if (node == null) {
       return null;
     }

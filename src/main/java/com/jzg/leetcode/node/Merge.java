@@ -1,7 +1,7 @@
 package com.jzg.leetcode.node;
 
 /**
- * 合并链表
+ * 合并
  *
  * 1->3->7
  *
@@ -12,7 +12,7 @@ package com.jzg.leetcode.node;
  * @author jinzg
  * @date 2021/1/27
  */
-public class MergeNode {
+public class Merge {
 
   public static void main(String[] args) {
     Node node17 = new Node(null, 7);
@@ -23,12 +23,12 @@ public class MergeNode {
     Node node24 = new Node(node25, 4);
     Node node21 = new Node(node24, 1);
 
-    Node node = mergeNode(node11, node21);
+    Node node = merge(node11, node21);
     System.out.println(node);
 
   }
 
-  static Node mergeNode(Node node1, Node node2) {
+  static Node merge(Node node1, Node node2) {
     if (node1 == null && node2 == null) {
       return null;
     }

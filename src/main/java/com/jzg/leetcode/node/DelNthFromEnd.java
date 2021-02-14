@@ -12,7 +12,7 @@ package com.jzg.leetcode.node;
  * @author jinzg
  * @date 2021/1/28
  */
-public class DelNthFromEndNode {
+public class DelNthFromEnd {
 
   public static void main(String[] args) {
     Node node17 = new Node(null, 7);
@@ -20,12 +20,12 @@ public class DelNthFromEndNode {
     Node node13 = new Node(node14, 3);
     Node node11 = new Node(node13, 1);
 
-    Node node = delNthFromEndNode(node11, 3);
+    Node node = delNthFromEnd(node11, 3);
     System.out.println(node);
 
   }
 
-  static Node delNthFromEndNode(Node node, int n) {
+  static Node delNthFromEnd(Node node, int n) {
     if (node == null) {
       return null;
     }

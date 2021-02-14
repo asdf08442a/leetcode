@@ -4,15 +4,15 @@ import java.util.Stack;
 
 /**
  * 判断回文链表
- *
+ * <p>
  * 1->3->7->7->3->1
- *
+ * <p>
  * true
  *
  * @author jinzg
  * @date 2021/1/29
  */
-public class IsPalindromeNode {
+public class IsPalindrome {
 
   public static void main(String[] args) {
     Node node21 = new Node(null, 2);
@@ -23,12 +23,12 @@ public class IsPalindromeNode {
     Node node13 = new Node(node17, 3);
     Node node11 = new Node(node13, 1);
 
-    boolean rst = isPalindromeNode(node11);
+    boolean rst = isPalindrome(node11);
     System.out.println(rst);
 
   }
 
-  static boolean isPalindromeNode(Node node) {
+  static boolean isPalindrome(Node node) {
     if (node == null) {
       return true;
     }
