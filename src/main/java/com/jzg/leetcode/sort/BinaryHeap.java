@@ -15,7 +15,7 @@ public class BinaryHeap {
     upAdjustMin(array);
     System.out.println(Arrays.toString(array));
 
-    array = new int[]{7, 1, 3, 10, 5, 2, 8, 9, 6};
+    array = new int[]{1, 3, 2, 6, 5, 7, 8, 9, 10, 0};
     buildMinHeap(array);
     System.out.println(Arrays.toString(array));
   }
@@ -51,7 +51,7 @@ public class BinaryHeap {
   }
 
   public static void buildMinHeap(int[] array) {
-    for (int i = (array.length - 2) / 2; i >= 0; i--) {
+    for (int i = (array.length - 1) / 2; i >= 0; i--) {
       downAdjustMin(array, i);
     }
   }

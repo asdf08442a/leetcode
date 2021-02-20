@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 快速排序
+ * <p>
+ * 时间复杂度O(nlogn)，空间复杂度O(nlogn)，不稳定排序
  *
  * @author jinzg
  * @date 2021/2/17

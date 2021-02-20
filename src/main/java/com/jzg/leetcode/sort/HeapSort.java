@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 堆排序
+ * <p>
+ * 时间复杂度O(nlogn)，空间复杂度O(1)，不稳定排序
  *
  * @author jinzg
  * @date 2021/2/16
@@ -19,7 +21,7 @@ public class HeapSort {
 
   public static void heapSort(int[] array) {
     // 构建最大二叉堆
-    for (int i = (array.length - 2) / 2; i >= 0; i--) {
+    for (int i = (array.length - 1) / 2; i >= 0; i--) {
       downAdjust(array, i, array.length);
     }
     System.out.println(Arrays.toString(array));
