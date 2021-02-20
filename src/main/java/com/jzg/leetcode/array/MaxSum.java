@@ -9,7 +9,7 @@ package com.jzg.leetcode.array;
 public class MaxSum {
 
   public static void main(String[] args) {
-    int[] nums = {1, 3, -4, 6, 7, 0, 9};
+    int[] nums = {1, -2, 3, 10, -4, 7, 2, -5};
     System.out.println(maxSum(nums));
   }
 
@@ -21,19 +21,6 @@ public class MaxSum {
         sum = num;
       } else {
         sum += num;
-      }
-      max = Math.max(max, sum);
-    }
-
-    return max;
-  }
-
-  static int maxSum1(int[] nums) {
-    int max = 0;
-    for (int i = 0; i < nums.length; i++) {
-      int sum = 0;
-      for (int j = i; j < nums.length; j++) {
-        sum += nums[j];
       }
       max = Math.max(max, sum);
     }
