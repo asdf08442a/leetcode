@@ -29,17 +29,13 @@ public class IsPalindrome {
   }
 
   static boolean isPalindrome(Node node) {
-    if (node == null) {
-      return true;
-    }
-    if (node.next == null) {
+    if (node == null || node.next == null) {
       return true;
     }
 
     Node head = node;
     Node slow = node;
     Node fast = node;
-
     while (fast.next != null && fast.next.next != null) {
       fast = fast.next.next;
       slow = slow.next;
@@ -50,7 +46,6 @@ public class IsPalindrome {
       stack.push(slow.value);
       slow = slow.next;
     }
-
     while (!stack.isEmpty()) {
       int value = stack.pop();
       if (value != head.value) {

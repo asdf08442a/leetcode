@@ -22,13 +22,13 @@ public class Reverse {
 
   }
 
-  static Node reverse(Node node) {
-    if (node == null) {
+  static Node reverse(Node head) {
+    if (head == null) {
       return null;
     }
 
     Node dummy = new Node(null, -1);
-    Node curr = node;
+    Node curr = head;
     while (curr != null) {
       Node next = curr.next;
       curr.next = dummy.next;
