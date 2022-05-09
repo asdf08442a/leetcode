@@ -5,6 +5,7 @@ import java.util.Stack;
 
 /**
  * 最小栈
+ * 实现一个栈，该栈带有出栈（pop）、入栈（push）、取最小元素（getMin）3个方法，要保证这3个方法的时间复杂度都是O(1)
  *
  * @author jinzg
  * @date 2021/2/16

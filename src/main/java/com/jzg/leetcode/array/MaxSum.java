@@ -2,15 +2,14 @@ package com.jzg.leetcode.array;
 
 /**
  * 最大子数组之和
- *
- * @author jinzg
- * @date 2021/2/15
  */
 public class MaxSum {
 
   public static void main(String[] args) {
-    int[] nums = {1, -2, 3, 10, -4, 7, 2, -5};
+    int[] nums = {-1};
     System.out.println(maxSum(nums));
+    int x=1,y=2;
+    Integer.bitCount(x^y);
   }
 
 

@@ -38,6 +38,7 @@ public class DivideRedPackage {
     int leftNum = totalPeopleNum;
     Random random = new Random();
     for (int i = 1; i < totalPeopleNum; i++) {
+      // 随机范围： [1, 剩余人均金额的2倍 - 1]
       int amount = random.nextInt(leftAmount / leftNum * 2 - 1) + 1;
       leftAmount -= amount;
       leftNum--;

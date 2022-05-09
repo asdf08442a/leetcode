@@ -48,6 +48,5 @@ public class LevelTraverse {
         queue.add(node.right);
       }
     }
-
   }
 }

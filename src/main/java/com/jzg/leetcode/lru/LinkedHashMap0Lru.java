@@ -27,6 +27,7 @@ public class LinkedHashMap0Lru {
       cache.remove(key);
       // 添加到链尾
       cache.put(key, val);
+      return val;
     }
     return null;
   }

@@ -2,9 +2,6 @@ package com.jzg.leetcode.array;
 
 /**
  * 查找插入位置
- *
- * @author jinzg
- * @date 2021/1/30
  */
 public class BinarySearch {
 

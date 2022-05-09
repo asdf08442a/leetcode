@@ -2,9 +2,6 @@ package com.jzg.leetcode.array;
 
 /**
  * 两数之和
- *
- * @author jinzg
- * @date 2019/6/5
  */
 public class TwoSum {
 

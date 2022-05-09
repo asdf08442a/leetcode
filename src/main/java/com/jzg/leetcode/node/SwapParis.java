@@ -24,9 +24,9 @@ public class SwapParis {
   }
 
   static Node swapParis(Node node) {
-    Node virtual = new Node();
-    virtual.next = node;
-    Node head = virtual;
+    Node dummy = new Node();
+    dummy.next = node;
+    Node head = dummy;
     while (head.next != null && head.next.next != null) {
       Node s1 = head.next, s2 = s1.next, s3 = s2.next;
       head.next = s2;
@@ -34,6 +34,6 @@ public class SwapParis {
       s1.next = s3;
       head = s1;
     }
-    return virtual.next;
+    return dummy.next;
   }
 }
