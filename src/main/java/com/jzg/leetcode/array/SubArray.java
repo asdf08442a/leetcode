@@ -13,13 +13,13 @@ public class SubArray {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        System.out.println(subArray1(nums));
+        System.out.println(subArray(nums));
     }
 
 
     static List subArray(int[] nums) {
         List<ArrayList<Integer>> result = Lists.newArrayList();
-        if(nums.length <= 0){
+        if (nums.length <= 0) {
             return result;
         }
         dfs(nums, 0, Lists.newLinkedList(), result);
@@ -28,7 +28,7 @@ public class SubArray {
 
     private static void dfs(int[] nums, int start, LinkedList<Integer> list, List<ArrayList<Integer>> result) {
         result.add(new ArrayList<>(list));
-        for(int i = start; i< nums.length; i++){
+        for (int i = start; i < nums.length; i++) {
             list.addLast(nums[i]);
             dfs(nums, i + 1, list, result);
             list.removeLast();
@@ -39,9 +39,9 @@ public class SubArray {
         List<List<Integer>> result = new ArrayList<>();
         result.add(new ArrayList<>());
 
-        for(int num: nums){
+        for (int num : nums) {
             List<List<Integer>> temp = Lists.newArrayList();
-            for(List subSet : result){
+            for (List subSet : result) {
                 List sub = new ArrayList(subSet);
                 sub.add(num);
                 temp.add(sub);

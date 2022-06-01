@@ -10,8 +10,8 @@ public class RemoveNum {
 
     public static void main(String[] args) {
         Integer[] nums = new Integer[100];
-        for(int i = 0;i< 100;i++){
-            nums[i] = i+1;
+        for (int i = 0; i < 100; i++) {
+            nums[i] = i + 1;
         }
         Integer[] ans = removeNum(nums);
         System.out.println(ans);
@@ -19,12 +19,12 @@ public class RemoveNum {
 
 
     static Integer[] removeNum(Integer[] nums) {
-        while(nums.length/7 >= 1){
+        while (nums.length / 7 >= 1) {
             List<Integer> newList = new ArrayList<>();
-            for(int i = 0;i<nums.length;i++){
-                if(i % 7 == 0 || i%10 == 7 || i/10 == 7){
+            for (int i = 0; i < nums.length; i++) {
+                if (i % 7 == 0 || i % 10 == 7 || i / 10 == 7) {
                     continue;
-                }else{
+                } else {
                     newList.add(nums[i]);
                 }
             }

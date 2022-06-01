@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Node {
 
-  public Node next;
-  public int value;
+    public Node next;
+    public int value;
 }

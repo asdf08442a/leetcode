@@ -12,28 +12,28 @@ package com.jzg.leetcode.node;
  */
 public class SwapParis {
 
-  public static void main(String[] args) {
-    Node node15 = new Node(null, 5);
-    Node node17 = new Node(node15, 7);
-    Node node13 = new Node(node17, 3);
-    Node node11 = new Node(node13, 1);
+    public static void main(String[] args) {
+        Node node15 = new Node(null, 5);
+        Node node17 = new Node(node15, 7);
+        Node node13 = new Node(node17, 3);
+        Node node11 = new Node(node13, 1);
 
-    Node node = swapParis(node11);
-    System.out.println(node);
+        Node node = swapParis(node11);
+        System.out.println(node);
 
-  }
-
-  static Node swapParis(Node node) {
-    Node dummy = new Node();
-    dummy.next = node;
-    Node head = dummy;
-    while (head.next != null && head.next.next != null) {
-      Node s1 = head.next, s2 = s1.next, s3 = s2.next;
-      head.next = s2;
-      s2.next = s1;
-      s1.next = s3;
-      head = s1;
     }
-    return dummy.next;
-  }
+
+    static Node swapParis(Node node) {
+        Node dummy = new Node();
+        dummy.next = node;
+        Node head = dummy;
+        while (head.next != null && head.next.next != null) {
+            Node s1 = head.next, s2 = s1.next, s3 = s2.next;
+            head.next = s2;
+            s2.next = s1;
+            s1.next = s3;
+            head = s1;
+        }
+        return dummy.next;
+    }
 }

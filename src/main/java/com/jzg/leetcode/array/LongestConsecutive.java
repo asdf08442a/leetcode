@@ -25,18 +25,18 @@ public class LongestConsecutive {
             set.add(num);
         }
         for (int num : nums) {
-            if (!set.contains(num)){
+            if (!set.contains(num)) {
                 continue;
             }
             int len = 1;
             int temp = num;
-            while(set.contains(--temp)){
+            while (set.contains(--temp)) {
                 ++len;
                 // 可以去掉，但加上可以减少时间复杂度？
                 set.remove(temp);
             }
             temp = num;
-            while(set.contains(++temp)){
+            while (set.contains(++temp)) {
                 ++len;
                 set.remove(temp);
             }

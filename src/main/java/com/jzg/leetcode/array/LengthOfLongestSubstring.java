@@ -1,6 +1,8 @@
 package com.jzg.leetcode.array;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -9,8 +11,8 @@ import java.util.Set;
 public class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
-        String s = "bbbb";
-        System.out.println(lengthOfLongestSubstring(s));
+        String s = "abba";
+        System.out.println(lengthOfLongestSubstring1(s));
     }
 
 
@@ -26,6 +28,23 @@ public class LengthOfLongestSubstring {
                 characterSet.add(s.charAt(j));
             }
             maxLength = Math.max(maxLength, characterSet.size());
+        }
+        return maxLength;
+    }
+
+    static int lengthOfLongestSubstring1(String s) {
+        if (s.length() == 0) {
+            return 0;
+        }
+        Map<Character, Integer> characterMap = new HashMap<>();
+        int maxLength = 0;
+        int left = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (characterMap.containsKey(s.charAt(i))) {
+                left = Math.max(left, characterMap.get(s.charAt(i)) + 1);
+            }
+            characterMap.put(s.charAt(i), i);
+            maxLength = Math.max(maxLength, i - left + 1);
         }
         return maxLength;
     }

@@ -12,36 +12,36 @@ package com.jzg.leetcode.node;
  */
 public class GetLoopPort {
 
-  public static void main(String[] args) {
-    Node node17 = new Node(null, 7);
-    Node node14 = new Node(node17, 4);
-    Node node13 = new Node(node14, 3);
-    Node node11 = new Node(node13, 1);
-    node17.next = node14;
+    public static void main(String[] args) {
+        Node node17 = new Node(null, 7);
+        Node node14 = new Node(node17, 4);
+        Node node13 = new Node(node14, 3);
+        Node node11 = new Node(node13, 1);
+        node17.next = node14;
 
-    Node node = getLoopPort(node11);
-    System.out.println(node.value);
+        Node node = getLoopPort(node11);
+        System.out.println(node.value);
 
-  }
+    }
 
-  static Node getLoopPort(Node head) {
-    if (head == null || head.next == null) {
-      return null;
+    static Node getLoopPort(Node head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                break;
+            }
+        }
+        slow = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
     }
-    Node fast = head;
-    Node slow = head;
-    while (fast != null && fast.next != null) {
-      fast = fast.next.next;
-      slow = slow.next;
-      if (fast == slow) {
-        break;
-      }
-    }
-    slow = head;
-    while (fast != slow) {
-      fast = fast.next;
-      slow = slow.next;
-    }
-    return slow;
-  }
 }

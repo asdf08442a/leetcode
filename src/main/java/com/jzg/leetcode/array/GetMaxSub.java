@@ -25,7 +25,7 @@ public class GetMaxSub {
         int start = -1, end = 0;
         for (; end < s.length(); end++) {
             char curr = s.charAt(end);
-            if(map.containsKey(curr)){
+            if (map.containsKey(curr)) {
                 start = Math.max(start, map.get(curr));
             }
             maxLen = Math.max(maxLen, end - start);

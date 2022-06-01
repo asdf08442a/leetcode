@@ -11,21 +11,21 @@ public class RemoveElement {
 
 
     static int removeElement(int[] nums, int n) {
-        if(nums.length == 0){
+        if (nums.length == 0) {
             return 0;
         }
-        int left = 0, right = nums.length-1;
-        while(left < right){
-            if(nums[left] == n){
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            if (nums[left] == n) {
                 nums[left] = nums[right];
                 right--;
-            }else{
+            } else {
                 left++;
             }
         }
-        if(nums[left] == n){
+        if (nums[left] == n) {
             return left;
         }
-        return left+1;
+        return left + 1;
     }
 }

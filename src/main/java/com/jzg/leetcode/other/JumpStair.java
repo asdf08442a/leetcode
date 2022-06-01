@@ -8,26 +8,26 @@ package com.jzg.leetcode.other;
  */
 public class JumpStair {
 
-  public static void main(String[] args) {
-    System.out.println(jumpStairUnRecur(5));
-  }
+    public static void main(String[] args) {
+        System.out.println(jumpStairUnRecur(5));
+    }
 
-  public static int jumpStairRecur(int n) {
-    if (n == 1) {
-      return 1;
+    public static int jumpStairRecur(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        return jumpStairRecur(n - 1) + jumpStairRecur(n - 2);
     }
-    if (n == 2) {
-      return 2;
-    }
-    return jumpStairRecur(n - 1) + jumpStairRecur(n - 2);
-  }
 
-  public static int jumpStairUnRecur(int n) {
-    int a = 1, b = 1;
-    for (int i = 1; i < n; i++) {
-      a = a + b;
-      b = a - b;
+    public static int jumpStairUnRecur(int n) {
+        int a = 1, b = 1;
+        for (int i = 1; i < n; i++) {
+            a = a + b;
+            b = a - b;
+        }
+        return a;
     }
-    return a;
-  }
 }

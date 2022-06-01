@@ -8,13 +8,13 @@ package com.jzg.leetcode.other;
  */
 public class IsPowerOf2 {
 
-  public static void main(String[] args) {
-    System.out.println(isPowerOf2(16));
-    System.out.println(isPowerOf2(20));
-  }
+    public static void main(String[] args) {
+        System.out.println(isPowerOf2(16));
+        System.out.println(isPowerOf2(20));
+    }
 
 
-  public static boolean isPowerOf2(int a) {
-    return (a & a - 1) == 0;
-  }
+    public static boolean isPowerOf2(int a) {
+        return (a & a - 1) == 0;
+    }
 }

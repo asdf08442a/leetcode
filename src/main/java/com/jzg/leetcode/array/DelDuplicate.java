@@ -1,9 +1,6 @@
 package com.jzg.leetcode.array;
 
-import com.google.common.collect.Lists;
-
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * 有序数组删除重复数字
@@ -25,7 +22,7 @@ public class DelDuplicate {
                 nums[++i] = nums[j];
             }
         }
-        return Arrays.copyOf(nums, i+1);
+        return Arrays.copyOf(nums, i + 1);
     }
 
 }

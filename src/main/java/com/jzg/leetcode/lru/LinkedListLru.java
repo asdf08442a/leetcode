@@ -12,43 +12,43 @@ import java.util.Objects;
  */
 public class LinkedListLru<T> {
 
-  private LinkedList<T> cache;
-  private int capacity;
+    private LinkedList<T> cache;
+    private int capacity;
 
-  public LinkedListLru(int capacity) {
-    cache = new LinkedList<>();
-    this.capacity = capacity;
-  }
+    public LinkedListLru(int capacity) {
+        cache = new LinkedList<>();
+        this.capacity = capacity;
+    }
 
-  public Object get(T target) {
-    Iterator<T> iterator = cache.descendingIterator();
-    while (iterator.hasNext()) {
-      T t = iterator.next();
-      if (Objects.equals(t, target)) {
-        // 删除并添加到链表尾部
-        iterator.remove();
-        put(target);
-        return t;
-      }
+    public Object get(T target) {
+        Iterator<T> iterator = cache.descendingIterator();
+        while (iterator.hasNext()) {
+            T t = iterator.next();
+            if (Objects.equals(t, target)) {
+                // 删除并添加到链表尾部
+                iterator.remove();
+                put(target);
+                return t;
+            }
+        }
+        return null;
     }
-    return null;
-  }
 
-  public void put(T target) {
-    Iterator<T> iterator = cache.descendingIterator();
-    while (iterator.hasNext()) {
-      T t = iterator.next();
-      if (Objects.equals(t, target)) {
-        // 删除
-        iterator.remove();
-      }
+    public void put(T target) {
+        Iterator<T> iterator = cache.descendingIterator();
+        while (iterator.hasNext()) {
+            T t = iterator.next();
+            if (Objects.equals(t, target)) {
+                // 删除
+                iterator.remove();
+            }
+        }
+        if (cache.size() == capacity) {
+            // 删除链头
+            cache.removeFirst();
+        }
+        // 添加到链表尾部
+        cache.add(target);
     }
-    if (cache.size() == capacity) {
-      // 删除链头
-      cache.removeFirst();
-    }
-    // 添加到链表尾部
-    cache.add(target);
-  }
 
 }
