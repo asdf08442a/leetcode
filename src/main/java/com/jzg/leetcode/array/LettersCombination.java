@@ -29,18 +29,18 @@ public class LettersCombination {
             put('8', "tuv");
             put('9', "wxyz");
         }};
-        backTracking(digits, phoneMap, ans, 0, new StringBuilder());
+        dfs(digits, phoneMap, ans, 0, new StringBuilder());
         return ans;
     }
 
-    private static void backTracking(String digits, Map<Character, String> phoneMap, List<String> ans, int index, StringBuilder str) {
+    private static void dfs(String digits, Map<Character, String> phoneMap, List<String> ans, int index, StringBuilder str) {
         if (str.length() == digits.length()) {
             ans.add(str.toString());
         } else {
             String letters = phoneMap.get(digits.charAt(index));
             for (int j = 0; j < letters.length(); j++) {
                 str.append(letters.charAt(j));
-                backTracking(digits, phoneMap, ans, index + 1, str);
+                dfs(digits, phoneMap, ans, index + 1, str);
                 str.deleteCharAt(index);
             }
         }

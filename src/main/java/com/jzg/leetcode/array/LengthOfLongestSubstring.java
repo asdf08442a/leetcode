@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 有效的括号
+ * 无重复字符的最长子串
  */
 public class LengthOfLongestSubstring {
 
@@ -14,7 +14,6 @@ public class LengthOfLongestSubstring {
         String s = "abba";
         System.out.println(lengthOfLongestSubstring1(s));
     }
-
 
     static int lengthOfLongestSubstring(String s) {
         int maxLength = 0;
