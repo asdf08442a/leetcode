@@ -9,15 +9,20 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int[] array = new int[]{5, 8, 6, 3, 9, 2, 1, 7};
-        System.out.println(Arrays.toString(array));
-        quickSortDouble(array, 0, array.length - 1);
+        quickSort(array, 0, array.length - 1);
         System.out.println(Arrays.toString(array));
     }
 
-    public static void quickSortDouble(int[] array, int startIndex, int endIndex) {
-        if (startIndex > endIndex) {
+    public static void quickSort(int[] array, int startIndex, int endIndex) {
+        if (startIndex >= endIndex) {
             return;
         }
+        int pivotIndex = partition(array, startIndex, endIndex);
+        quickSort(array, startIndex, pivotIndex - 1);
+        quickSort(array, pivotIndex + 1, endIndex);
+    }
+
+    private static int partition(int[] array, int startIndex, int endIndex) {
         int pivot = array[startIndex];
         int left = startIndex;
         int right = endIndex;
@@ -31,14 +36,17 @@ public class QuickSort {
                 left++;
             }
             if (left < right) {
-                int tmp = array[left];
-                array[left] = array[right];
-                array[right] = tmp;
+                swap(array, left, right);
             }
         }
         array[startIndex] = array[left];
         array[left] = pivot;
-        quickSortDouble(array, startIndex, left - 1);
-        quickSortDouble(array, left + 1, endIndex);
+        return left;
+    }
+
+    private static void swap(int[] array, int i, int j) {
+        array[i] = array[i] ^ array[j];
+        array[j] = array[i] ^ array[j];
+        array[i] = array[i] ^ array[j];
     }
 }
