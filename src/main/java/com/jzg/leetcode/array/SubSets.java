@@ -9,15 +9,15 @@ import java.util.List;
 /**
  * 子集
  */
-public class SubArray {
+public class SubSets {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
-        System.out.println(subArray(nums));
+        System.out.println(subSets(nums));
     }
 
 
-    static List subArray(int[] nums) {
+    static List subSets(int[] nums) {
         List<ArrayList<Integer>> result = Lists.newArrayList();
         if (nums.length <= 0) {
             return result;
@@ -33,22 +33,6 @@ public class SubArray {
             dfs(nums, i + 1, list, result);
             list.removeLast();
         }
-    }
-
-    static List subArray1(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        result.add(new ArrayList<>());
-
-        for (int num : nums) {
-            List<List<Integer>> temp = Lists.newArrayList();
-            for (List subSet : result) {
-                List sub = new ArrayList(subSet);
-                sub.add(num);
-                temp.add(sub);
-            }
-            result.addAll(temp);
-        }
-        return result;
     }
 
 }
